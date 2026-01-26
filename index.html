@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Krati 🎉</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="confetti"></canvas>
+
+<div class="container">
+  <div class="screen active" id="screen1">
+    <h1 id="typing"></h1>
+    <p>A little surprise awaits for you 💖</p>
+    <button onclick="startSurprise()">🎁 Start Surprise</button>
+  </div>
+
+  <div class="screen" id="screen2">
+    <h1>Happy Birthday Krati 🎂</h1>
+    <div class="cake">
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+    <button onclick="next(3)">🎈 Pop Balloons</button>
+  </div>
+
+  <div class="screen" id="screen3">
+    <h2>Pop all 4 balloons 🎈</h2>
+    <div class="balloons">
+      <div class="balloon" onclick="pop(this)"></div>
+      <div class="balloon" onclick="pop(this)"></div>
+      <div class="balloon" onclick="pop(this)"></div>
+      <div class="balloon" onclick="pop(this)"></div>
+    </div>
+    <button id="nextBtn" disabled onclick="next(4)">Next →</button>
+  </div>
+
+  <div class="screen" id="screen4">
+    <h2>💌 A Special Message</h2>
+    <p class="message">
+      Happy 16th Birthday Krati 💕<br><br>
+      May your life always be full of smiles,
+      happiness and beautiful dreams 🌸✨
+    </p>
+    <button onclick="next(5)">Next →</button>
+  </div>
+
+  <div class="screen" id="screen5">
+    <h2>One Last Thing… 🎁</h2>
+    <img src="krati.jpg" class="photo">
+    <p>Tap the gift below 🎁</p>
+    <div class="gift" onclick="next(6)">🎁</div>
+  </div>
+
+  <div class="screen" id="screen6">
+    <h1>Lots of love for you ❤️</h1>
+    <p>Once again, Happy Birthday Krati 🎉</p>
+    <button onclick="location.reload()">🔁 Replay</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
