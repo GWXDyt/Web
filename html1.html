@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I'm Truly Sorry</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f0f0f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    section{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      padding:40px;
+      text-align:center;
+      position:relative;
+    }
+
+    .hero{
+      background:linear-gradient(135deg,#111,#1c1c1c,#000);
+    }
+
+    .glow{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(255,0,80,0.15);
+      filter:blur(120px);
+      border-radius:50%;
+      animation:move 8s infinite alternate;
+    }
+
+    @keyframes move{
+      from{
+        transform:translate(-100px,-50px);
+      }
+      to{
+        transform:translate(150px,100px);
+      }
+    }
+
+    h1{
+      font-size:70px;
+      margin-bottom:20px;
+      font-family:'Dancing Script',cursive;
+      color:#ff4d6d;
+      z-index:2;
+    }
+
+    .hero p{
+      max-width:850px;
+      font-size:22px;
+      line-height:1.9;
+      color:#d8d8d8;
+      z-index:2;
+    }
+
+    .btn{
+      margin-top:40px;
+      padding:16px 40px;
+      border:none;
+      border-radius:40px;
+      background:#ff4d6d;
+      color:white;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.4s;
+      text-decoration:none;
+      z-index:2;
+      box-shadow:0 0 25px rgba(255,77,109,0.5);
+    }
+
+    .btn:hover{
+      transform:scale(1.08);
+      background:#ff3357;
+    }
+
+    .section-title{
+      font-size:50px;
+      margin-bottom:30px;
+      color:#ff4d6d;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+      width:100%;
+      max-width:1200px;
+      margin-top:30px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.05);
+      padding:30px;
+      border-radius:25px;
+      backdrop-filter:blur(12px);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 0 30px rgba(255,77,109,0.2);
+    }
+
+    .card h3{
+      color:#ff4d6d;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .card p{
+      color:#d7d7d7;
+      line-height:1.8;
+    }
+
+    /* SKETCH SECTION */
+
+    .sketch-section{
+      background:linear-gradient(to bottom,#0b0b0b,#161616);
+    }
+
+    .sketch-container{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:50px;
+      flex-wrap:wrap;
+      margin-top:40px;
+      max-width:1200px;
+    }
+
+    .sketch-img{
+      width:380px;
+      border-radius:25px;
+      border:3px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 40px rgba(255,77,109,0.25);
+      transition:0.4s;
+    }
+
+    .sketch-img:hover{
+      transform:scale(1.03);
+    }
+
+    .sketch-text{
+      max-width:500px;
+      text-align:left;
+    }
+
+    .sketch-text h3{
+      color:#ff4d6d;
+      font-size:36px;
+      margin-bottom:20px;
+    }
+
+    .sketch-text p{
+      color:#d8d8d8;
+      line-height:2;
+      font-size:18px;
+    }
+
+    .shayari{
+      background:linear-gradient(to bottom,#111,#1b0c12);
+    }
+
+    .shayari-box{
+      max-width:900px;
+      background:rgba(255,255,255,0.05);
+      padding:50px;
+      border-radius:30px;
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow:0 0 40px rgba(255,77,109,0.15);
+    }
+
+    .shayari-box p{
+      font-size:28px;
+      line-height:2;
+      color:#f3d8dd;
+      font-family:'Dancing Script',cursive;
+    }
+
+    .final{
+      background:#080808;
+    }
+
+    .final h2{
+      font-size:55px;
+      color:#ff4d6d;
+      margin-bottom:25px;
+    }
+
+    .final p{
+      max-width:900px;
+      line-height:2;
+      color:#cfcfcf;
+      font-size:22px;
+    }
+
+    .heart{
+      position:absolute;
+      color:#ff4d6d;
+      animation:float 8s linear infinite;
+      opacity:0.6;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(100vh) scale(0);
+      }
+      100%{
+        transform:translateY(-10vh) scale(1.5);
+      }
+    }
+
+    footer{
+      padding:20px;
+      text-align:center;
+      background:#000;
+      color:#777;
+      font-size:14px;
+    }
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:38px;
+      }
+
+      .shayari-box p{
+        font-size:22px;
+      }
+
+      .final h2{
+        font-size:40px;
+      }
+
+      .sketch-img{
+        width:90%;
+      }
+
+      .sketch-text{
+        text-align:center;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- FLOATING HEARTS -->
+
+  <script>
+
+    for(let i=0;i<40;i++){
+
+      let heart=document.createElement("div");
+
+      heart.innerHTML="❤";
+
+      heart.classList.add("heart");
+
+      heart.style.left=Math.random()*100+"vw";
+
+      heart.style.fontSize=(Math.random()*25+15)+"px";
+
+      heart.style.animationDuration=(Math.random()*5+5)+"s";
+
+      document.body.appendChild(heart);
+
+    }
+
+  </script>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="glow"></div>
+
+    <h1>I'm Really Sorry...</h1>
+
+    <p>
+      I know I made mistakes.
+      Maybe I hurt you more than I ever realized.
+      I wish I could go back and change every moment that made you sad.
+      But today, all I can do is honestly say —
+      I regret every pain I caused.
+      You mattered to me yesterday,
+      you matter to me today,
+      and you always will.but abse yaar bs or nhi karunga i really knew it what i had done last month se abhi tak maine dekh liya sb kuch......
+    </p>
+
+    <a href="#apology" class="btn">Read My Heart</a>
+
+  </section>
+
+  <!-- APOLOGY SECTION -->
+
+  <section id="apology">
+
+    <h2 class="section-title">Things I Need To Say</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>I Was Wrong</h3>
+        <p>
+          I know my actions hurt you.
+          No excuse can erase what happened.
+          I accept my mistakes completely.my bheaviour was suddenly changed ik that hurt you most but now now
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>You mean to me alot</h3>
+        <p>
+          You gave your care, trust and time.
+          I should have protected your feelings instead of hurting them.and now i will dont do this all.!
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>I Changed</h3>
+        <p>
+          I learned from everything.
+          I don’t want to repeat the same mistakes again.
+          I truly want to become better.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Please Don't Stay Sad</h3>
+        <p>
+          Seeing you upset hurts me deeply.
+          Even if you stay angry,
+          I just hope your heart feels lighter soon
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKETCH SECTION -->
+
+  <section class="sketch-section">
+
+    <h2 class="section-title">A Sketch I Made For You</h2>
+
+    <div class="sketch-container">
+
+      <!-- ADD YOUR IMAGE HERE -->
+      <!-- Upload image in GitHub repository -->
+      <!-- Name image sketch.jpg -->
+
+      <img src="https://ik.imagekit.io/ytdpzmmhw/New%20Folder/694AA5C3-0B7C-49C9-9481-4E013F5534F5.png" alt="Sketch" class="sketch-img">
+     <img src="https://ik.imagekit.io/ytdpzmmhw/New%20Folder/8E2413BA-FB6F-4EED-A20A-76EF03CE3EA2.png" alt="Sketch" class="sketch-img">
+     <img src="https://ik.imagekit.io/ytdpzmmhw/New%20Folder/D5C431CF-89CD-4CB1-B9C1-0A759D8C9E13.png" alt="Sketch" class="sketch-img">
+      <img src="https://ik.imagekit.io/ytdpzmmhw/New%20Folder/IMG_7192.jpeg" alt="Sketch" class="sketch-img">
+      <img src="https://ik.imagekit.io/ytdpzmmhw/New%20Folder/IMG_7198.jpeg" alt="Sketch" class="sketch-img">
+      <div class="sketch-text">
+
+        <h3>Every Line Has Feelings...</h3>
+
+        <p>
+          I know a sketch are like not that much good but
+          I tried to make good.This thing is one where i can try and try...
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SHAYARI SECTION -->
+
+  <section class="shayari">
+
+    <h2 class="section-title">Shayari For You</h2>
+
+    <div class="shayari-box">
+
+      <p>
+
+        "Galti meri thi, isliye darr tera bhi sahi hai…
+Par yakeen maan, iss baar sirf baatein nahi, badlav bhi hoga.
+
+Tu phir se trust karne se darti hai na,
+shayad isliye teri khamoshi bhi mujhe samajh aati hai.
+
+Thank you mujhe ek last chance dene ke liye…
+ab mera har effort sirf itna hoga,
+ki tujhe kabhi dobara hurt hone ka darr na lage.
+..." 
+Teri smile ka koi jawaab nahi,
+dekhte hi dil ko araam sa mil jaata hai.
+
+Sach bolu toh,
+poori duniya ek taraf…
+aur tera hasta hua chehra ek taraf. ❤️
+
+
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- FINAL SECTION -->
+
+  <section class="final">
+
+    <h2>One Last Thing...</h2>
+
+    <p>
+Dekh mujhe pata hai abhi he sb nmml nhi hoga but i am trying ki 
+ho jaye jaldi he 
+      <br><br>
+
+      I'm truly sorry.
+
+    </p>
+
+    <a class="btn" href="#">❤</a>
+
+  </section>
+
+  <footer>
+i am alway ready for sorry but please be happy
+</footeer
+  
+
+</body>
+</html>
